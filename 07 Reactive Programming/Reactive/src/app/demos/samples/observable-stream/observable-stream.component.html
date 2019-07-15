@@ -1,0 +1,57 @@
+<mat-card>
+  Works with Mock Data - No Service needed
+</mat-card>
+
+<mat-card fxLayout="column" fxLayoutGap="10px">
+  <h4>Using Observables</h4>
+
+  <a mat-raised-button color="accent" (click)="createSingletonObservable()"
+    >Get Movie Singleton Observable</a
+  >
+
+  <a mat-raised-button color="accent" (click)="unsubscribeSingletonObservable()"
+    >Unsubscribe</a
+  >
+
+  <a mat-raised-button color="accent" (click)="createArrayObservable()"
+    >Get Movie Array Observable - Simulate Stream</a
+  >
+</mat-card>
+
+<mat-card [ngSwitch]="currentView">
+  <h5>Result:</h5>
+  <div *ngSwitchCase="view.SingletonObservable" style="padding: 20px 20px">
+    {{ (MovieSingleton | async)?.title }}
+  </div>
+
+  <div *ngSwitchCase="view.Array" fxLayout="column">
+    <h4>createArrayObservable()</h4>
+    <div fxLayout="row wrap">
+      <app-movie-renderer
+        *ngFor="let mi of movies"
+        [item]="mi"
+        [isPlaying]="true"
+      ></app-movie-renderer>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="view.Dashboard">
+    <div><h4>Now Playing</h4></div>
+    <div fxLayout="row wrap">
+      <app-movie-renderer
+        *ngFor="let mi of playingArray"
+        [item]="mi"
+        [isPlaying]="true"
+      ></app-movie-renderer>
+    </div>
+
+    <div><h4>Upcoming</h4></div>
+    <div fxLayout="row wrap">
+      <app-movie-renderer
+        *ngFor="let mi of upcomingArray"
+        [item]="mi"
+        [isPlaying]="false"
+      ></app-movie-renderer>
+    </div>
+  </div>
+</mat-card>

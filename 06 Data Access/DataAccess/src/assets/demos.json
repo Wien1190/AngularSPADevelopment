@@ -1,0 +1,17 @@
+[
+  {
+    "url": "observablescurd",
+    "title": "Observables CRUD",
+    "component": "ObservableCrudComponent"
+  },
+  {
+    "url": "clients",
+    "title": "HttpClient",
+    "component": "HttpClientsComponent"
+  },
+  {
+    "url": "interceptor",
+    "title": "Using Interceptor",
+    "component": "InterceptorComponent"
+  }
+]

@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Enter amount in € to be converted
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        placeholder="Enter amount in € to be converted"
+        [ngModel]="amount$ | async"
+        (ngModelChange)="onAmountChange($event)"
+      />
+    </mat-form-field>
+
+    <div fxLayout="row wrap">
+      <div *ngFor="let currency of currencyRates$ | async" class="rate" fxFlex>
+        <div>{{ currency.code }}:</div>
+        <div fxLayoutAlign="end center">
+          {{ currency.value * (amount$ | async) | number: "1.2-2" }}
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

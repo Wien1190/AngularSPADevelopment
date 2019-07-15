@@ -1,0 +1,13 @@
+<div class="section">
+  <h4>List of Employees - Nested</h4>
+  <div *ngFor="let p of persons">
+    <app-person-edit
+      [person]="p"
+      [editMode]="false"
+      (savePerson)="savePersonToDB($event)"
+      #personRef
+    ></app-person-edit>
+    <!-- Call a method that is implemented in the component referenced by local ref -->
+    <a (click)="personRef.doDelete()">Delete Person</a>
+  </div>
+</div>

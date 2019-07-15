@@ -1,0 +1,13 @@
+@import "stylevars.scss";
+
+.rate {
+  background-color: $medium-col;
+  color: $light-col;
+  min-width: 100px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.mat-form-field {
+  width: 100%;
+}

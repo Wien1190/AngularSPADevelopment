@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      HTMLElement
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <button mat-raised-button (click)="setTitle()">Set Title</button>
+    <h2 #title>Choose Brand Colors:</h2>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Component: See console for output
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-alert></app-alert>
+    <app-alert type="danger"></app-alert>
+    <app-alert type="info"></app-alert>
+  </mat-card-content>
+</mat-card>

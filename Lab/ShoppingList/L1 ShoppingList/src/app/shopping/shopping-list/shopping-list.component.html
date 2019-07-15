@@ -1,0 +1,33 @@
+<mat-card fxLayout="column">
+  <mat-form-field>
+      <input matInput placeholder="Type Item to add and press enter" [(ngModel)]="current.name" >
+  </mat-form-field>
+  <mat-form-field>
+      <input type="number" matInput placeholder="Enter price" [(ngModel)]="current.price" >
+  </mat-form-field>
+  <div fxFlexFill fxLayoutGap="10px">
+      <a fxFlex="1 1 auto" mat-raised-button color="primary" (click)="newItem()" >New</a>
+      <a fxFlex="1 1 auto" mat-raised-button color="primary" (click)="addItem()" >Add</a>
+  </div>
+  
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Items on list:</mat-card-title>
+  <mat-list>
+    <mat-list-item *ngFor="let i of items" fxFlexFill fxLayoutGap="5px">
+      <div fxFlex="4 1 auto" >{{i.name}}</div>
+      <div fxFlex="4 1 auto" >{{i.price}}</div>
+      <div fxFlex="1 1 auto" >
+        <button mat-mini-fab color="primary" (click)="deleteItem(i)">
+          <mat-icon class="mat-18">delete</mat-icon>
+        </button> 
+      </div>
+      <div fxFlex="1 1 auto" >
+          <button mat-mini-fab color="primary" (click)="editItem(i)">
+            <mat-icon class="mat-18">edit</mat-icon>
+          </button> 
+      </div>
+    </mat-list-item >
+  </mat-list>
+</mat-card>
