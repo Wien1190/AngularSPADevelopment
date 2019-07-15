@@ -28,5 +28,10 @@
     "url": "formcontrol",
     "title": "Form Control Features",
     "component": "FormControlComponent"
+  },
+  {
+    "url": "formarray",
+    "title": "Form Array",
+    "component": "FormArrayComponent"
   }
 ]

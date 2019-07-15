@@ -1,3 +1,34 @@
-<p>
-  form-array works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Skills Sheet</mat-card-title>
+    <mat-card-subtitle>Add your skills</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="name"
+          placeholder="Enter Name:"
+        />
+      </mat-form-field>
+      <div *ngIf="form.controls.name.value">
+        <h2>Credentials</h2>
+
+        <div
+          formArrayName="skills"
+          *ngFor="let skill of form.controls.skills?.value; let i = index"
+        >
+          <ng-container [formGroupName]="i">
+            <input placeholder="Skill Name" formControlName="skillname" />
+            <input placeholder="Years" formControlName="years" />
+          </ng-container>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button (click)="addSkill()">Add Skill</button>
+  </mat-card-actions>
+</mat-card>
