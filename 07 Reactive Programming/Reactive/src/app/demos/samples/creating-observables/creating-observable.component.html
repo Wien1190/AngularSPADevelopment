@@ -7,18 +7,18 @@
 
   <mat-card-content fxLayout="column" fxLayoutGap="10px">
     <a mat-raised-button color="accent" (click)="useNewObs()"
-      >Use Observable.create()</a
+      >new Observable()</a
     >
-    <a mat-raised-button color="accent" (click)="useObsFrom()">Use from()</a>
-    <a mat-raised-button color="accent" (click)="useOf()">Use of()</a>
+    <a mat-raised-button color="accent" (click)="useObsFrom()">from()</a>
+    <a mat-raised-button color="accent" (click)="useOf()">of()</a>
     <a mat-raised-button color="accent" (click)="wrappingCallbacks()"
       >Wrapping Callbacks</a
     >
     <a mat-raised-button color="accent" (click)="usePromiseToObs()"
-      >Cast Promise to Observable</a
+      >Wrapping Promises</a
     >
     <a mat-raised-button color="accent" (click)="useOperator()"
-      >Use simple Operator()</a
+      >Simple Operators</a
     >
   </mat-card-content>
 </mat-card>

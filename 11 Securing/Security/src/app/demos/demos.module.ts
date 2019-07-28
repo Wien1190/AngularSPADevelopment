@@ -5,7 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { MaterialModule } from "../material.module";
 import { DemoService } from "./demo.service";
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { WinAuthComponent } from "./samples/winauth/winauth.component";
 import { FirebaseComponent } from "./samples/firebase/firebase.component";
 import { AdalComponent } from "./samples/adal/adal.component";
@@ -37,6 +37,7 @@ const demoRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(demoRoutes),
     MaterialModule,
     HttpClientModule
